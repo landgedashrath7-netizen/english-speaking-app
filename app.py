@@ -1,7 +1,9 @@
 import streamlit as st
 import sqlite3
 from gtts import gTTS
-
+streamlit
+gtts
+streamlit
 # ---------- Page Config ----------
 st.set_page_config(page_title="English Learning App", page_icon="📘")
 

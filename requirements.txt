@@ -1,2 +1,18 @@
 streamlit
 gtts
+
+from gtts import gTTS
+import tempfile
+
+def speak(text):
+    tts = gTTS(text)
+    
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp:
+        tts.save(tmp.name)
+        audio_file = open(tmp.name, "rb")
+        st.audio(audio_file.read(), format="audio/mp3")
+for i, s in enumerate(days_data[day]["sentences"]):
+    st.write("👉", s)
+    
+    if st.button(f"🔊 Play {i}"):
+        speak(s)
